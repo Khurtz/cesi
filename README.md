@@ -13,8 +13,5 @@
 # Vérifier l'installation
 git --version
 
-# Installer Git (Linux)
-sudo apt install git
-
-# Installer Git (Windows)
+# Installer Git
 # https://git-scm.com/
