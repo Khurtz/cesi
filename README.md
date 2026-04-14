@@ -15,7 +15,7 @@ git --version
 
 # Installer Git
 # https://git-scm.com/
-
+```
 
 ## Workflow Git
  
@@ -35,4 +35,5 @@ gitGraph
    checkout main
    merge develop
    commit id: "Merge final"
+
 ```
