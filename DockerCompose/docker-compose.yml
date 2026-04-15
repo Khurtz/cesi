@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # MySQL
+  db:
+    image: mysql:8.0
+    container_name: mysql_server
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: company
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - db_data:/var/lib/mysql
+
+  # PHP
+  php:
+    build:
+      context: ./php
+    container_name: php_fpm_server
+    volumes:
+      - ./src:/usr/local/apache2/htdocs/
+    depends_on:
+      - db
+
+  # Apache
+  apache:
+    image: httpd:2.4
+    container_name: apache_web_server
+    ports:
+      - "8080:80"
+    volumes:
+      - ./src:/usr/local/apache2/htdocs/
+      - ./apache/my-vhost.conf:/usr/local/apache2/conf/httpd.conf
+    depends_on:
+      - php
+
+volumes:
+  db_data:
