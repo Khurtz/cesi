@@ -20,6 +20,7 @@ resource "google_compute_firewall" "ssh" {
   }
 
   source_ranges = ["0.0.0.0/0"]
+#oui je sais ce n'est pas l'idéal coté sécu, mais pour un tp fonctionnel c'est très bien :)
 }
 
 resource "google_compute_firewall" "http" {
