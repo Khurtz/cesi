@@ -2,7 +2,7 @@
 FROM debian:bookworm-slim
 
 # Metadata
-LABEL maintainer="toi@example.com"
+LABEL maintainer="hugo.bourhis@viacesi.fr"
 LABEL description="Image LAMP simple"
 
 # Mode non interactif
